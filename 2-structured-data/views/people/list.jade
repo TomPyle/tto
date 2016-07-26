@@ -14,23 +14,21 @@
 extends ../base.jade
 
 block content
-  h3 Books
+  h3 People
 
-  a(href="/books/add", class='btn btn-success btn-sm')
+  a(href="/people/add", class='btn btn-success btn-sm')
     i.glyphicon.glyphicon-plus
-    span  Add book
+    span  Add person
 
-  each book in books
+  each person in people
     .media
-      a(href="/books/#{book.id}")
-        .media-left
-            img(src=book.imageUrl || "http://placekitten.com/g/128/192")
+      a(href="/people/#{person.id}")
         .media-body
-          h4= book.title
-          p= book.author
+          h4= person.email
+          p= person.fName
 
-  if !books.length
-    p No books found.
+  if !people.length
+    p No people found.
 
   if nextPageToken
     nav

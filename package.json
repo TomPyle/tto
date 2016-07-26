@@ -1,8 +1,8 @@
 {
-  "name": "nodejs-getting-started",
+  "name": "tto",
   "version": "1.0.0",
-  "description": "End to end sample for running Node.JS applications on Google Cloud Platform",
-  "repository": "https://github.com/GoogleCloudPlatform/nodejs-getting-started",
+  "description": "End to end poc TrashTalkOakland hack for running Node.JS applications on Google Cloud Platform",
+  "repository": "https://github.com/tompyle/tto",
   "private": true,
   "scripts": {
     "lint": "semistandard \"**/*.js\"",
@@ -12,7 +12,7 @@
     "e2e": "mocha test/e2e.js -t 1800000",
     "codecov": "cat ./coverage/lcov.info | codecov"
   },
-  "author": "Google Inc.",
+  "author": "Google Inc. cloned by TrashTalkOakland",
   "contributors": [
     {
       "name": "Jon Wayne Parrott",
@@ -25,6 +25,10 @@
     {
       "name": "Jason Dobry",
       "email": "jdobry@google.com"
+    }
+    {
+      "name": "Tom Pyle",
+      "email": "tom@berkeleycentrumdata.us"
     }
   ],
   "license": "Apache Version 2.0",

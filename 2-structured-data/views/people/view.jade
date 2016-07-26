@@ -11,22 +11,24 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 
-doctype html
-html(lang="en")
-  head
-    title TrashTalkOakland - Node.js on Google Cloud Platform
-    meta(charset='utf-8')
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
-  body
-    .navbar.navbar-default
-      .container
-        .navbar-header
-          .navbar-brand TrashTalk-Oakland
+extends ../base.jade
 
-        ul.nav.navbar-nav
-          li
-            a(href="/books") People 
+block content
+  h3 People
+    small
 
-    .container
-      block content
+  .btn-group
+    a(href="/people/#{person.id}/edit", class='btn btn-primary btn-sm')
+      i.glyphicon.glyphicon-edit
+      span  Edit person
+    a(href="/people/#{person.id}/delete", class='btn btn-danger btn-sm')
+      i.glyphicon.glyphicon-trash
+      span  Delete person
+
+  .media
+    .media-body
+      h4= person.email
+        | &nbsp;
+        small= person.fName
+      h5 Since #{person.joinDate||'unknown'}
+      p= person.description

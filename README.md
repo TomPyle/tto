@@ -1,4 +1,5 @@
-# Getting started with Node.js on Google Cloud Platform
+# Getting TrashTalkOakland started with Node.js on Google Cloud Platform
+# Cloned from getting started tutorial for Node.js on Google Cloud Platform
 
 [![Build Status][travis-badge]][travis-link]
 [![Coverage Status][coveralls-badge]][coveralls-link]

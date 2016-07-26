@@ -15,7 +15,7 @@
 
 var MongoClient = require('mongodb').MongoClient;
 
-describe('Bookshelf app', function () {
+describe('TrashTalkOakland app', function () {
   require('../1-hello-world/test');
   require('../2-structured-data/test');
   require('../3-binary-data/test');

@@ -48,7 +48,7 @@ nconf
     // MongoDB connection string
     // https://docs.mongodb.org/manual/reference/connection-string/
     MONGO_URL: 'mongodb://localhost:27017',
-    MONGO_COLLECTION: 'books',
+    MONGO_COLLECTION: 'people',
 
     MYSQL_USER: '',
     MYSQL_PASSWORD: '',

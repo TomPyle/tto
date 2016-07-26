@@ -14,24 +14,27 @@
 extends ../base.jade
 
 block content
-  h3 Book
-    small
+  h3 People
 
-  .btn-group
-    a(href="/books/#{book.id}/edit", class='btn btn-primary btn-sm')
-      i.glyphicon.glyphicon-edit
-      span  Edit book
-    a(href="/books/#{book.id}/delete", class='btn btn-danger btn-sm')
-      i.glyphicon.glyphicon-trash
-      span  Delete book
+  a(href="/people/add", class='btn btn-success btn-sm')
+    i.glyphicon.glyphicon-plus
+    span  Add person
 
-  .media
-    .media-left
-      img(src=book.imageUrl || "http://placekitten.com/g/128/192")
-    .media-body
-      h4= book.title
-        | &nbsp;
-        small= book.publishedDate
-      h5 By #{book.author||'unknown'}
-      p= book.description
-      small Added by #{book.createdBy}
+  each person in  persons
+    .media
+      a(href="/people/#{person.id}")
+        .media-left
+            img(src=person.imageUrl || "http://placekitten.com/g/128/192")
+        .media-body
+          h4= person.fName
+          h4= person.lName
+          p= person.email
+
+  if !people.length
+    p No people found.
+
+  if nextPageToken
+    nav
+      ul.pager
+        li
+          a(href="?pageToken=#{encodeURIComponent(nextPageToken)}") More

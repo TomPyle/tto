@@ -61,13 +61,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(require('./lib/oauth2').router);
 
-// Books
-app.use('/books', require('./books/crud'));
-app.use('/api/books', require('./books/api'));
+// People
+app.use('/people', require('./people/crud'));
+app.use('/api/people', require('./people/api'));
 
-// Redirect root to /books
+// Redirect root to /people
 app.get('/', function (req, res) {
-  res.redirect('/books');
+  res.redirect('/people');
 });
 
 // Our application will need to respond to health checks when running on

@@ -12,17 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 
-# This file configures the bookshelf task worker. The worker is responsible
-# for processing book requests and updating book information.
+# This file configures the trashtalkoakland task worker. The worker is responsible
+# for processing person requests and updating person information.
 
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: bookshelf-worker
+  name: person-worker
   labels:
-    app: bookshelf
-# The bookshelf worker replica set ensures that at least 2 instances of the
-# bookshelf worker pod are running on the cluster.
+    app: trashtalkoakland
+# The trashtalkoakland worker replica set ensures that at least 2 instances of the
+# trashtalkoakland worker pod are running on the cluster.
 # For more info about Pods see:
 #   https://cloud.google.com/container-engine/docs/pods/
 spec:
@@ -30,13 +30,13 @@ spec:
   template:
     metadata:
       labels:
-        app: bookshelf
+        app: trashtalkoakland
         tier: worker
     spec:
       containers:
-      - name: bookshelf-app
+      - name: trashtalkoakland-app
         # Replace [GCLOUD_PROJECT] with your project ID or use `make template`.
-        image: gcr.io/[GCLOUD_PROJECT]/bookshelf
+        image: gcr.io/trashtalk-oakland/trashtalkoakland
         # This setting makes nodes pull the docker image every time before
         # starting the pod. This is useful when debugging, but should be turned
         # off in production.
